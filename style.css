@@ -2,11 +2,14 @@ body {
     font-family: 'Arial', sans-serif;
     background-color: #f0f2f5;
     display: flex;
+    flex-direction: column; /* Changed to column to stack main content and form */
     justify-content: center;
     align-items: center;
-    height: 100vh;
+    min-height: 100vh; /* Changed to min-height for content expansion */
     margin: 0;
     transition: background-color 0.3s, color 0.3s;
+    padding: 20px; /* Add some padding for overall layout */
+    box-sizing: border-box; /* Include padding in element's total width and height */
 }
 
 body.dark-mode {
@@ -22,6 +25,9 @@ body.dark-mode {
     border-radius: 15px;
     box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
     transition: background-color 0.3s;
+    margin-bottom: 40px; /* Space between lotto game and contact form */
+    width: 100%; /* Adjust width to fit */
+    max-width: 600px; /* Max width for better appearance */
 }
 
 body.dark-mode .container {
@@ -111,4 +117,89 @@ lotto-ball {
     background-image: radial-gradient(circle, #fff, #ccc);
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
     transform-origin: center center;
+}
+
+/* Contact Form Styles */
+.contact-form-container {
+    background-color: #fff;
+    padding: 30px;
+    border-radius: 15px;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    max-width: 600px;
+    text-align: center;
+    transition: background-color 0.3s;
+}
+
+body.dark-mode .contact-form-container {
+    background-color: #333;
+}
+
+.contact-form-container h2 {
+    color: #333;
+    margin-bottom: 25px;
+}
+
+body.dark-mode .contact-form-container h2 {
+    color: #f0f2f5;
+}
+
+.contact-form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    text-align: left;
+}
+
+.contact-form label {
+    font-weight: bold;
+    color: #555;
+}
+
+body.dark-mode .contact-form label {
+    color: #ccc;
+}
+
+.contact-form input[type="text"],
+.contact-form input[type="email"],
+.contact-form textarea {
+    width: calc(100% - 20px);
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    font-size: 16px;
+    background-color: #f9f9f9;
+    color: #333;
+    transition: border-color 0.3s, background-color 0.3s;
+}
+
+body.dark-mode .contact-form input[type="text"],
+body.dark-mode .contact-form input[type="email"],
+body.dark-mode .contact-form textarea {
+    background-color: #444;
+    border-color: #666;
+    color: #f0f2f5;
+}
+
+.contact-form input[type="text"]:focus,
+.contact-form input[type="email"]:focus,
+.contact-form textarea:focus {
+    border-color: #4CAF50;
+    outline: none;
+}
+
+.contact-form button[type="submit"] {
+    background-color: #007bff;
+    color: white;
+    padding: 12px 20px;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    margin-top: 10px;
+}
+
+.contact-form button[type="submit"]:hover {
+    background-color: #0056b3;
 }
